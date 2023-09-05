@@ -1,0 +1,28 @@
+.container__class {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 10rem;
+}
+.lower__img {
+  width: 30%;
+  max-height: 50%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sub__head{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: blue;
+    font-size: 1.2rem;
+}
+.content__body{
+    padding: 1rem 4rem;
+}
