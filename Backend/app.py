@@ -38,3 +38,37 @@ async def upload_video(file: UploadFile, metadata: VideoMetadata):
     collection.insert_one(video_data)
 
     return {"message": "Video uploaded successfully"}
+
+
+
+
+
+@app.get("/download/{video_id}")
+async def download_video(video_id: str):
+    # Retrieve video information from MongoDB
+    video_info = collection.find_one({"_id": video_id})
+
+    if not video_info:
+        raise HTTPException(status_code=404, detail="Video not found")
+
+    # Get the file name and location (you may have stored it differently)
+    file_name = video_info["file_name"]
+
+     # Set the file path based on your storage setup
+    file_path = f"path_to_video_storage/{file_name}"  # Replace with your actual file path
+
+    # Check if the file exists
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="Video file not found")
+
+    # Define response headers for the video download
+    headers = {
+        "Content-Disposition": f"attachment; filename={file_name}"
+    }
+
+    # Open and read the video file
+    with open(file_path, "rb") as video_file:
+        video_data = video_file.read()
+
+    # Return the video data as a response
+    return Response(content=video_data, headers=headers, media_type="video/mp4")
