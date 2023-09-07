@@ -14,7 +14,9 @@ function HeroPage() {
               voices. <br /> Easily add captions, translated subtitles,
               translate voice-overs and more.
             </div>
-            <button>Get Started</button>
+            <button className="button" id="button">
+              Get Started
+            </button>
           </div>
         </section>
       </main>
