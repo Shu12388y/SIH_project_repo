@@ -1,2 +1,10 @@
 pymongo
 fastapi
+speech_recognition
+playsound
+gtts
+numpy
+googletrans
+moviepy
+
+
