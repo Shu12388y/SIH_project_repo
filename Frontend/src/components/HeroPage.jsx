@@ -1,5 +1,6 @@
 import "./style/HeroPage.css";
 import "animate.css";
+import { Link } from "react-router-dom";
 function HeroPage() {
   return (
     <>
@@ -14,9 +15,11 @@ function HeroPage() {
               voices. <br /> Easily add captions, translated subtitles,
               translate voice-overs and more.
             </div>
-            <button className="button" id="button">
-              Get Started
-            </button>
+            <Link to="/upload">
+              <button className="button" id="button">
+                Get Started
+              </button>
+            </Link>
           </div>
         </section>
       </main>
