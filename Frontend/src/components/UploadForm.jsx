@@ -1,6 +1,4 @@
-import "./style/loginForm.css";
-
-
+import "./style/UploadForm.css";
 
 import React, { useState } from "react";
 import axios from "axios";
@@ -43,7 +41,7 @@ const LoginForm = () => {
     <div>
       <h2>Upload Video</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="input">
           <input
             type="text"
             placeholder="Title"
@@ -51,23 +49,22 @@ const LoginForm = () => {
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div>
+        <div className="input">
           <textarea
             placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
-        <div>
+        <div className="input__file">
           <input type="file" accept=".mp4" onChange={handleFileChange} />
         </div>
-        <div>
+        <div className="button">
           <button type="submit">Upload Video</button>
         </div>
       </form>
     </div>
   );
 };
-
 
 export default LoginForm;

@@ -17,7 +17,7 @@ function Navigation() {
           <Link to="login" className="link-text">
             Log In
           </Link>
-          <Link to="/getstartd" className="button__Style">
+          <Link to="/upload" className="button__Style">
             Get Started
           </Link>
         </div>
